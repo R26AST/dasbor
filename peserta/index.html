@@ -227,7 +227,7 @@
 				<!-- Halaman dinamis -->
 				
 				<section class="halaman">
-					<script type="text/javascript" src="../assets/js/page.js"></script>
+					
 				</section>
 
 				<!-- end -->
@@ -245,6 +245,10 @@
 		</div>
 		
 	
+	</div>
+
+	<div class="tagsJS">
+		<script type="text/javascript" src="../assets/js/page.js"></script>
 	</div>
 	
 	<style>
@@ -301,9 +305,17 @@
 		});*/
 	
 		function halaman(file) {
-			$('.halaman').load('./modul/'+ file +'.html');
-			$('.halaman').html($('.halaman').html());
+			/*$('.halaman').load('./modul/'+ file +'.html');
+			$('.halaman').html($('.halaman').html());*/
 			console.log(file);
+			xHttpOP = new XMLHttpRequest();
+			xHttpOP.onload = function() {
+				//$('.halaman').load('./modul/'+ file +'.html');
+				$('.halaman').innerHTML = this.responseText;
+				$('.tagsJS').html($('.tagsJS').html());
+			}
+			xHttpOP.open('GET', './modul/'+ file +'.html');
+			xHttpOP.send();
 		}
 		halaman('home');
 	</script>
