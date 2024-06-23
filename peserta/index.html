@@ -295,23 +295,23 @@
 	<script src="../assets/js/setting-demo.js"></script> -->
 	
 	<script>
-		$(document).ready(function() {
+		/*$(document).ready(function() {
 			$('.halaman').load('./modul/home.html');
-		});
+		});*/
 	
 		function halaman(file) {
 			$('.halaman').load('./modul/'+ file +'.html');
 		}
 		
-		/*$('.home').click(function() {
-			$('.akun').hide();
-			$('.ujian').hide();
-			$('.utama').show();
-		});*/
+		$('.home').click(function() {
+			halaman('home');
+		});
 	
 		$('.btn-back').click(function() {
 			halaman('home');
 		});
+
+		halaman('home');
 	</script>
 	
 
