@@ -34,7 +34,7 @@
 						<li class="contentnode"><dl><dt>Kabupaten/Kota</dt><dd>Kab. Batang</dd></dl></li>
 						<li class="contentnode"><dl><dt>Provinsi</dt><dd>Jawa Tengah</dd></dl></li>
 						<li class="contentnode"><dl><dt>Kompetisi</dt><dd>OSN ASTRONOMI</dd></dl></li>
-						<li class="contentnode"><dl><dt>Tahun Kompetisi</dt><dd><script>$(document).append(new Date().getFullYear())</script></dd></dl></li>
+						<li class="contentnode"><dl><dt>Tahun Kompetisi</dt><dd><script>$(document .body).text(new Date().getFullYear())</script></dd></dl></li>
 					</ul>
 				</div>
 			</div>
@@ -97,8 +97,8 @@
 				</div>
 				<div class="card-body">
 					<ul style="padding-left: 0px;">
-						<li class="contentnode"><dl><dt>Pertama kali mengakses situs</dt><dd><script>$(document).append(Cookies.get('pertamaLogin'))</script>Sat Jun 22 2024 20:51:27 GMT+0700 (Western Indonesia Time)</dd></dl></li>
-						<li class="contentnode"><dl><dt>Terakhir mengakses situs</dt><dd><script>$(document).append(Cookies.get('terakhirLogin'))</script>Sat Jun 22 2024 20:51:27 GMT+0700 (Western Indonesia Time)</dd></dl></li>
+						<li class="contentnode"><dl><dt>Pertama kali mengakses situs</dt><dd><script>$(document .body).text(Cookies.get('pertamaLogin'))</script>Sat Jun 22 2024 20:51:27 GMT+0700 (Western Indonesia Time)</dd></dl></li>
+						<li class="contentnode"><dl><dt>Terakhir mengakses situs</dt><dd><script>$(document .body).text(Cookies.get('terakhirLogin'))</script>Sat Jun 22 2024 20:51:27 GMT+0700 (Western Indonesia Time)</dd></dl></li>
 					</ul>
 				</div>
 			</div>
