@@ -1,5 +1,5 @@
-//$('.tahun').append(new Date().getFullYear());
-document.querySelector('.tahun').innerHTML = new Date().getFullYear();
+$('.tahun').append(new Date().getFullYear());
+//document.querySelector('.tahun').innerHTML = new Date().getFullYear();
 
 /* Tombol kembali */
 
