@@ -227,7 +227,7 @@
 				<!-- Halaman dinamis -->
 				
 				<section class="halaman">
-					
+					<script type="text/javascript" src="../assets/js/page.js"></script>
 				</section>
 
 				<!-- end -->
@@ -301,26 +301,9 @@
 		});*/
 	
 		function halaman(file) {
-			//$('.halaman').load('./modul/'+ file +'.html');
+			$('.halaman').load('./modul/'+ file +'.html');
 			console.log(file);
-			fetch('./modul/'+ file +'.html')
-			.then(res => res.text())
-			.then(data => {
-				$('.halaman').append(data);
-				//const parser = new DOMParser();
-				//const doc = parser.parseFromString(data, 'text/html');
-				//eval(doc.querySelector('script').textContent);
-			});
 		}
-		
-		$('.home').click(function() {
-			halaman('home');
-		});
-	
-		$('.btn-back').click(function() {
-			halaman('home');
-		});
-
 		halaman('home');
 	</script>
 	
