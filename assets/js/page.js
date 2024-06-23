@@ -30,7 +30,7 @@ function waktu() {
 
 var inter = setInterval(waktu, 1000);
 
-$('.nav-item').click(function() {
+$('li').on('click', function() {
 	$(this).siblings().removeClass('active');
 	$(this).addClass('active');
 });
