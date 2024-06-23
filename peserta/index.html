@@ -296,13 +296,22 @@
 	<script src="../assets/js/setting-demo.js"></script> -->
 	
 	<script type="text/javascript">
+		let halaman = $('.halaman');
 		/*$(document).ready(function() {
 			$('.halaman').load('./modul/home.html');
 		});*/
 	
 		function halaman(file) {
-			$('.halaman').load('./modul/'+ file +'.html');
+			//$('.halaman').load('./modul/'+ file +'.html');
 			console.log(file);
+			fetch('./modul/'+ file +'.html')
+			.then(res => res.text())
+			.then(data => {
+				halaman.innerHTML = data;
+				const parser = new DOMParser();
+				const doc = parser.parserFromString(data, 'text/html');
+				eval(doc.querySelector('script').textContent);
+			});
 		}
 		
 		$('.home').click(function() {
