@@ -16,7 +16,7 @@ function waktu() {
 
 	var hariIni = new Date();
 
-	$('.hari-tanggal').append(namaHari[hariIni.getDay()] + ' ' + hariIni.getDate() + ' ' + namaBulan[hariIni.getMonth()] + ' ' + hariIni.getFullYear());
+	$('.hari-tanggal').text(namaHari[hariIni.getDay()] + ' ' + hariIni.getDate() + ' ' + namaBulan[hariIni.getMonth()] + ' ' + hariIni.getFullYear());
 
 	var h = hariIni.getHours(),
 	    m = hariIni.getMinutes(),
@@ -25,7 +25,7 @@ function waktu() {
 	h = h<10 ? '0'+h : h;
 	m = m<10 ? '0'+m : m;
 	s = s<10 ? '0'+s : s;
-	$('.jam').append(h + ' : ' + m + ' : ' + s);
+	$('.jam').text(h + ' : ' + m + ' : ' + s);
 }
 
 var inter = setInterval(waktu, 1000);
