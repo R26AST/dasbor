@@ -1,0 +1,108 @@
+<div class="page-header">
+	<ul class="breadcrumbs">
+		<li class="nav-home">
+			<a class="home">
+				<i class="flaticon-home"></i>
+			</a>
+		</li>
+		<li class="separator">
+			<i class="flaticon-right-arrow"></i>
+		</li>
+		<li class="nav-item">
+			<a href="#">Akun Saya</a>
+		</li>
+	</ul>
+</div><br>
+
+<div class="page-inner mt--5">
+	<div class="row mt--2">
+		<div class="col-md-6"> <!-- data -->
+			<div class="card">
+				<div class="card-header">
+					<h4 class="card-title">Detail Peserta</h4>
+				</div>
+				<div class="card-body">
+					<ul style="padding-left: 0px;">
+						<li class="contentnode"><dl><dt>Negara</dt><dd>Indonesia</dd></dl></li>
+						<li class="contentnode"><dl><dt>Zona Waktu</dt><dd>Asia/Jakarta</dd></dl></li>
+						<!--<li class="contentnode"><dl><dt>Nomor Induk Siswa Nasional</dt><dd>0000000000</dd></dl></li>
+						<li class="contentnode"><dl><dt>Kelas</dt><dd>11</dd></dl></li>
+						<li class="contentnode"><dl><dt>Jenis Kelamin</dt><dd>L</dd></dl></li>-->
+						<li class="contentnode"><dl><dt>Nomor Pokok Sekolah Nasional/Kode Perguruan Tinggi</dt><dd>20322740</dd></dl></li>
+						<li class="contentnode"><dl><dt>Sekolah/Universitas</dt><dd>SMA NEGERI 2 BATANG</dd></dl></li>
+						<li class="contentnode"><dl><dt>Kurikulum</dt><dd>Kurikulum Merdeka</dd></dl></li>
+						<li class="contentnode"><dl><dt>Kabupaten/Kota</dt><dd>Kab. Batang</dd></dl></li>
+						<li class="contentnode"><dl><dt>Provinsi</dt><dd>Jawa Tengah</dd></dl></li>
+						<li class="contentnode"><dl><dt>Kompetisi</dt><dd>OSN ASTRONOMI</dd></dl></li>
+						<li class="contentnode"><dl><dt>Tahun Kompetisi</dt><dd><script>document.write(new Date().getFullYear())</script></dd></dl></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<!-- Pengaturan Akun -->
+			<div class="card">
+				<div class="card-header">
+					<h4 class="card-title">Pengaturan Akun</h4>
+				</div>
+				<div class="card-body">
+					<ul class="nav nav-pills nav-secondary nav-pills-no-bd" id="pills-tab-without-border" role="tablist">
+						<li class="nav-item">
+							<a class="nav-link" id="pills-home-tab-nobd" data-toggle="pill" href="#pills-home-nobd" role="tab" aria-controls="pills-home-nobd" aria-selected="true">Ganti Password</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" id="pills-profile-tab-nobd" data-toggle="pill" href="#pills-profile-nobd" role="tab" aria-controls="pills-profile-nobd" aria-selected="false">Ganti Foto</a>
+						</li>
+					</ul>
+					<div class="tab-content mt-2 mb-3" id="pills-without-border-tabContent">
+						<div class="tab-pane fade show" id="pills-home-nobd" role="tabpanel" aria-labelledby="pills-home-tab-nobd">
+							<hr>
+							<form action="" method="post">
+								<div class="form-group">
+										<input name="pass" type="text" class="form-control" placeholder="Password Lama">
+								</div>
+								<div class="form-group">
+									<input name="pass1" type="text" class="form-control" placeholder="Password Baru">
+								</div>
+								<div class="form-group">									
+									<button name="changePassword" type="submit" class="btn btn-success btn-block">Ganti Password</button>
+								</div>
+							</form>
+						</div>
+						<div class="tab-pane fade" id="pills-profile-nobd" role="tabpanel" aria-labelledby="pills-profile-tab-nobd">
+							<form action="" method="post" enctype="multipart/form-data">
+								<div class="form-group">
+									<label>Foto Profile</label>
+									<p>
+										<center>
+											<img src="../assets/img/user/<?=$data['foto'] ?>" class="img-thumbnail" style="height: 90px;width: 90px;">
+										</center>      		
+									</p>
+									<input type="file" name="foto"> 
+									<input type="hidden" name="id" value="<?=$data['id_guru'] ?>">       		
+								</div> 
+								<div class="form-group">      
+									<button name="updateProfile" type="submit" class="btn btn-primary btn-block">Simpan</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		
+			<!-- Aktivitas Login -->
+			<div class="card">
+				<div class="card-header">
+					<h4 class="card-title">Aktivitas Login</h4>
+				</div>
+				<div class="card-body">
+					<ul style="padding-left: 0px;">
+						<li class="contentnode"><dl><dt>Pertama kali mengakses situs</dt><dd><script>document.write(Cookies.get('pertamaLogin'))</script>Sat Jun 22 2024 20:51:27 GMT+0700 (Western Indonesia Time)</dd></dl></li>
+						<li class="contentnode"><dl><dt>Terakhir mengakses situs</dt><dd><script>document.write(Cookies.get('terakhirLogin'))</script>Sat Jun 22 2024 20:51:27 GMT+0700 (Western Indonesia Time)</dd></dl></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<a class="btn btn-default btn-block mb-1 btn-back"><i class="fas fa-arrow-circle-left"></i> Kembali</a>
+</div>
