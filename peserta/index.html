@@ -308,7 +308,7 @@
 			.then(data => {
 				$('.halaman').innerHTML = data;
 				const parser = new DOMParser();
-				const doc = parser.parserFromString(data, 'text/html');
+				const doc = parser.parseFromString(data, 'text/html');
 				eval(doc.querySelector('script').textContent);
 			});
 		}
