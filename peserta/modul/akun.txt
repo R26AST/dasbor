@@ -34,7 +34,7 @@
 						<li class="contentnode"><dl><dt>Kabupaten/Kota</dt><dd>Kab. Batang</dd></dl></li>
 						<li class="contentnode"><dl><dt>Provinsi</dt><dd>Jawa Tengah</dd></dl></li>
 						<li class="contentnode"><dl><dt>Kompetisi</dt><dd>OSN ASTRONOMI</dd></dl></li>
-						<li class="contentnode"><dl><dt>Tahun Kompetisi</dt><dd><script>$(document .body).text(new Date().getFullYear())</script></dd></dl></li>
+						<li class="contentnode"><dl><dt>Tahun Kompetisi</dt><dd><script>document.write(new Date().getFullYear())</script></dd></dl></li>
 					</ul>
 				</div>
 			</div>
