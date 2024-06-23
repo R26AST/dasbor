@@ -1,5 +1,4 @@
 $('.tahun').append(new Date().getFullYear());
-//document.querySelector('.tahun').innerHTML = new Date().getFullYear();
 
 /* Tombol kembali */
 
@@ -10,3 +9,23 @@ $('.home').click(function() {
 $('.btn-back').click(function() {
 	halaman('home');
 });
+
+function waktu() {
+	var namaBulan = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
+	var namaHari = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
+
+	var hariIni = new Date();
+
+	$('.hari-tanggal').append(namaHari[hariIni.getDay()] + ' ' + hariIni.getDate() + ' ' + namaBulan[hariIni.getMonth()] + ' ' + hariIni.getFullYear());
+
+	var h = hariIni.getHours(),
+	    m = hariIni.getMinutes(),
+	    s = hariIni.getSeconds();
+
+	h = h<10 ? '0'+h : h;
+	m = m<10 ? '0'+m : m;
+	s = s<10 ? '0'+s : s;
+	$('.jam').append(h + ' : ' + m + ' : ' + s);
+}
+
+var inter = setInterval(waktu, 1000);
