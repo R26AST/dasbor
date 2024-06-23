@@ -305,8 +305,9 @@
 		});*/
 	
 		function halaman(file) {
-			$('.halaman').load('./modul/'+ file +'.html');
-			$('.halaman').append($('.tagsJS').html());
+			$('.halaman').load('./modul/'+ file +'.html', function() {
+				$('.halaman').append($('.tagsJS').html());
+			});
 			console.log(file);
 			/*xHttpOP = new XMLHttpRequest();
 			xHttpOP.onload = function() {
