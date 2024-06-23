@@ -29,8 +29,3 @@ function waktu() {
 }
 
 var inter = setInterval(waktu, 1000);
-
-$('li').on('click', function() {
-	$(this).siblings().removeClass('active');
-	$(this).addClass('active');
-});
