@@ -227,9 +227,8 @@
 				<!-- Halaman dinamis -->
 				
 				<section class="halaman">
-					
+					<script type="text/javascript" src="../assets/js/page.js"></script>
 				</section>
-				<script type="text/javascript" src="../assets/js/page.js"></script>
 
 				<!-- end -->
 
@@ -303,6 +302,7 @@
 	
 		function halaman(file) {
 			$('.halaman').load('./modul/'+ file +'.html');
+			$('.halaman').html($('.halaman').html());
 			console.log(file);
 		}
 		halaman('home');
