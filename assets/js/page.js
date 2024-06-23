@@ -16,7 +16,7 @@ function waktu() {
 
 	var hariIni = new Date();
 
-	$('.hari-tanggal').text(namaHari[hariIni.getDay()] + ' ' + hariIni.getDate() + ' ' + namaBulan[hariIni.getMonth()] + ' ' + hariIni.getFullYear());
+	$('.hari-tanggal').text(namaHari[hariIni.getDay()] + ' ' + hariIni.getDate() + ' ' + namaBulan[hariIni.getMonth()] + ' ' + hariIni.getFullYear() + ', ');
 
 	var h = hariIni.getHours(),
 	    m = hariIni.getMinutes(),
