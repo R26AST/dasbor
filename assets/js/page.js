@@ -1,4 +1,5 @@
 $('.tahun').append(new Date().getFullYear());
+$('.thn-2-angka').append(new Date().getFullYear().toString().substr(-2));
 
 /* Tombol kembali */
 
