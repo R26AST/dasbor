@@ -44,6 +44,8 @@ $('.test-jaringan').click(function() {
 	//downloadImgSrc.src = imageLink;
 	var cacheImg = "?nn=" + time_start;
 	downloadImgSrc.src = imageLink + cacheImg;
+	$('.test-jaringan').html('Silakan Tunggu');
+	$('.test-jaringan').prop( "disabled", true );
 	downloadImgSrc.onload = function () {
 		end_time = new Date().getTime();
 		displaySpeed();
@@ -84,5 +86,7 @@ function displaySpeed() {
     {
         $.get(URL_SAVE_NETWORK_INFO+'/'+speedInKbps+'/'+cls_txt);
     }
+	$('.test-jaringan').prop( "disabled", false );
+	$('.test-jaringan').html('<i class="fas fa-cogs"></i> CEK LAGI');
 }
 
