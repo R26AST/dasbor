@@ -4,7 +4,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<title>Peserta | Aplikasi OSN</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-	<link rel="icon" href="../assets/img/icon.ico" type="image/x-icon"/>
+	<link rel="icon" href="https://r26ast.github.io/dasbor/assets/img/icon.ico" type="image/x-icon"/>
 
 	<!-- Fonts and icons -->
 	<script src="https://kit.fontawesome.com/4151c061e6.js"></script>
@@ -14,7 +14,7 @@
 	<script>
 		WebFont.load({
 			google: {"families":["Lato:300,400,700,900"]},
-			custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"], urls: ['../assets/css/fonts.min.css']},
+			custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"], urls: ['https://r26ast.github.io/dasbor/assets/css/fonts.min.css']},
 			active: function() {
 				sessionStorage.fonts = true;
 			}
@@ -329,14 +329,6 @@
 				$('.halaman').append($('.tagsJS').html());
 			});
 			console.log(file);
-			/*xHttpOP = new XMLHttpRequest();
-			xHttpOP.onload = function() {
-				//$('.halaman').load('./modul/'+ file +'.html');
-				$('.halaman').innerHTML = this.responseText;
-				$('.tagsJS').html($('.tagsJS').html());
-			}
-			xHttpOP.open('GET', './modul/'+ file +'.html');
-			xHttpOP.send();*/
 		}
 		halaman('home');
 	</script>
