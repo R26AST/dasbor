@@ -391,6 +391,14 @@
 			console.log(file);
 		}
 		halaman('home');
+
+		let main = document.getElementById('main');
+		window.onclick = function(event) {
+		    if (event.target != $('.btn-toggle')) {
+		        //sidebar.classList.add('toggled');
+			$('.btn-toggle').click();
+		    }
+		};
 	</script>
 	
 
