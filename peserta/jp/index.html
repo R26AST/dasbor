@@ -24,12 +24,18 @@
 	<!-- CSS Files -->
 	<link rel="stylesheet" href="https://r26ast.github.io/dasbor/assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://r26ast.github.io/dasbor/assets/css/atlantis.min.css">
+	<link rel="stylesheet" type="text/css" href="https://r26ast.github.io/dasbor/assets/evo-calendar/css/evo-calendar.css">
+	<link rel="stylesheet" type="text/css" href="https://r26ast.github.io/dasbor/assets/evo-calendar/css/evo-calendar.min.css">
+	<link rel="stylesheet" type="text/css" href="https://r26ast.github.io/dasbor/assets/evo-calendar/css/evo-calendar.orange-coral.min.css">
+	<link rel="stylesheet" type="text/css" href="https://r26ast.github.io/dasbor/assets/evo-calendar/css/evo-calendar.midnight-blue.min.css">
+	<link rel="stylesheet" type="text/css" href="https://r26ast.github.io/dasbor/assets/evo-calendar/css/evo-calendar.royal-navy.min.css">
 
 	<!-- CSS Just for demo purpose, don't include it in your project 
 	<link rel="stylesheet" href="../assets/css/demo.css"> -->
 
 	<!-- Ajax -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
 
 </head>
 <body>
@@ -265,12 +271,66 @@
 
 	<div class="tagsJS">
 		<script type="text/javascript" src="https://r26ast.github.io/dasbor/assets/js/page-jp.js"></script>
+		<script type="text/javascript" src="https://r26ast.github.io/dasbor/assets/evo-calendar/js/evo-calendar-2.js"></script>
+		<script type="text/javascript">
+			$('#evoCalendar').addClass('event-hide');
+			$('#evoCalendar').evoCalendar({
+				language:'id',
+				theme: 'Royal Navy',
+				//theme: 'Orange Coral',
+				todayHighlight: true,
+				sidebarToggler: true,
+				eventListToggler: true,
+				canAddEvent: false,
+				format:'mm/dd/yyyy',
+				eventHeaderFormat:'d MM yyyy',
+				calendarEvents: [
+					{ name: "Tahun Baru Masehi", date: new Date("2024-01-01"), type: "holiday", everyYear: true },
+					{ name: "Hari Buruh", date: new Date("2024-05-01"), type: "holiday", everyYear: true },
+					{ name: "Hari Lahir Pancasila", date: new Date("2024-06-01"), type: "holiday", everyYear: true },
+					{ name: "Hari Kemerdekaan Indonesia", toString: "Hari Kemerdekaan Indonesia", date: new Date("1945-08-17"), type: "holiday", everyYear: true },
+					{ name: "Hari Raya Natal", date: new Date("2024-12-25"), type: "holiday", everyYear: true },
+					{ name: "Hari Raya Idulfitri", date: "April/10/2024", type: "event" },
+					{ name: "Hari Raya Idulfitri", date: "April/11/2024", type: "event" },
+					{ name: "Hari Raya Iduladha", date: "June/17/2024", type: "event" },
+					/*{ name: "Holiday #3", date: "February/3/2020", type: "holiday" },
+					{ name: "Birthday #2", date: "February/3/2020", type: "birthday" },
+					{ name: "Holiday #4", date: "February/15/2020", type: "event" },
+					{ name: "Patient #2", date: "February/8/2020", type: "event" },
+					{ name: "Leap day", date: "February/29/2020", type: "holiday", everyYear: true }*/
+				],
+				onSelectDate: function() {
+					// console.log('onSelectDate!')
+				},
+				onAddEvent: function() {
+					console.log('onAddEvent!')
+				}
+			});
+			        // $("#evoCalendar").evoCalendar('addCalendarEvent', [...]);
+					 
+			$('#sidebarToggler').click(function() {
+				if(!$("#evoCalendar").hasClass('event-hide')) { 
+					$("#evoCalendar").addClass('event-hide');
+				}
+			});
+			$('#eventListToggler').click(function() {
+				if(!$("#evoCalendar").hasClass('sidebar-hide')) { 
+					$("#evoCalendar").addClass('sidebar-hide');
+				}
+			});
+		</script>
 	</div>
 	
 	<style>
 		/*.nav-link.active.show {
 			background: #1572e8;
 		}*/
+
+		@media screen and (min-width: 1023px) {
+			.breadcrumbs {
+				margin-left: 0;
+			}
+		}
 
 		.hari-tanggal {
 			text-transform: uppercase;
