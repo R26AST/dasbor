@@ -46,7 +46,7 @@
 				
 				<a href="#" class="logo">
 					<img src="../assets/img/r26.png" alt="navbar brand" class="navbar-brand" width="40">
-					<b class="text-white">SMAN 2 BATANG</b>
+					<b class="text-white">R26</b>
 				</a>
 				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon">
@@ -260,7 +260,10 @@
 		<footer class="footer">
 				<div class="container">
 					<div class="copyright ml-auto">
-						&copy; <script>document.write(new Date().getFullYear())</script> Aplikasi OSN } R26
+						&copy; <script>
+							var y = new Date().getFullYear();
+							document.write(((y == 2024) ? '' : '2024 &ndash; ') + y)
+						</script> Aplikasi OSN | R26
 					</div>				
 				</div>
 			</footer>
