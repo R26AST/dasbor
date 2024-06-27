@@ -395,8 +395,8 @@
 		}
 		halaman('home');
 
-		document.onclick = function(event) {
-		    //if (event.target != $('.nav-toggle')) {
+		document.onclick = function(e) {
+		    //if (e.target != $('.nav-toggle')) {
 		    if (!$('.wrapper').contains(e.target) && !$('.btn .btn-toggle .toggle-sidebar').contains(e.target)) {
 			$('.wrapper').addClass('sidebar_minimize');
 			$('.toggle-sidebar').addClass('toggled');
