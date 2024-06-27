@@ -396,8 +396,8 @@
 		halaman('home');
 
 		document.onclick = function(e) {
-		    //if (e.target != $('.nav-toggle')) {
-		    if (!$('.wrapper').contains(e.target) && !$('.btn .btn-toggle .toggle-sidebar').contains(e.target)) {
+		    if (e.target != $('.nav-toggle') || e.target != $('.btn .btn-toggle .toggle-sidebar')) {
+		    //if (!$('.wrapper').contains(e.target) && !$('.btn .btn-toggle .toggle-sidebar').contains(e.target)) {
 			$('.wrapper').addClass('sidebar_minimize');
 			$('.toggle-sidebar').addClass('toggled');
 			    //console.log('tutup');
