@@ -412,6 +412,16 @@
 			//$('.toggle-sidebar').click();
 		    }
 		};
+		var links = document.querySelectorAll('.sidebar-content .nav li');
+		links.forEach(function(element) {
+			element.addEventListener('click', function(e) {
+				e.preventDefault();
+				links.forEach(function(element) {
+					element.classList.remove('active');
+				});
+				this.classList.add('active');
+			});
+		});
 	</script>
 	
 
