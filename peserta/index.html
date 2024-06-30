@@ -420,6 +420,10 @@
 	<script src="../assets/js/setting-demo.js"></script> -->
 	
 	<script type="text/javascript">
+		if(typeof Cookies.get('user') === "undefined") {
+			window.location.replace('https://r26ast.github.io/dasbor/');
+		}
+		else {}
 		//var links = document.querySelectorAll('.sidebar-content .nav li');
 		/*$(document).ready(function() {
 			$('.halaman').load('./modul/home.html');
