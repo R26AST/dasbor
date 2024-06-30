@@ -124,7 +124,9 @@
 										<div class="dropdown-divider"></div>
 										<a class="dropdown-item" href="javascript:halaman('profil');" >Profil Saya</a>
 										<div class="dropdown-divider"></div>
-										<a class="dropdown-item" data-toggle="modal" data-target="#logout">Logout</a>
+										<a class="dropdown-item keluar" data-toggle="modal" data-target="#logout">Logout 
+											<i class="fa fa-sign-out"></i>
+										</a>
 									</li>
 								</div>
 							</ul>
@@ -235,7 +237,7 @@
 							</div>
 						</li> -->
 						<li class="nav-item active mt-3">
-							<a data-toggle="modal" data-target="#logout" class="collapsed">
+							<a data-toggle="modal" data-target="#logout" class="collapsed keluar">
 								<i class="fas fa-arrow-alt-circle-left"></i>
 								<p>Logout</p>
 							</a>							
@@ -389,6 +391,10 @@
 		
 		.contentnode {
 			list-style: none;
+		}
+
+		.keluar {
+			cursor: pointer;
 		}
 	</style>
 	
