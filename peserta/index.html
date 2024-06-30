@@ -467,7 +467,7 @@
 		});
 
 		document.addEventListener("visibilitychange", () => {
-			var intervalSesi = 5 * 60 * 1000;
+			var intervalSesi = 1 * 60 * 1000;
 			
 			if (document.hidden) {
 				localStorage.sessionLogin = +new Date + intervalSesi;
@@ -476,10 +476,10 @@
 				setInterval(function() {
 						var remaining = localStorage.sessionLogin - new Date;
 						if( remaining > 0 ) {
-							localStorage.sessionLogin = +new Date + intervalSesi;
-							/*setTimeout(function() {
+							//localStorage.sessionLogin = +new Date + intervalSesi;
+							setTimeout(function() {
 								localStorage.removeItem('sessionLogin'); 
-							}, 1000);*/
+							}, 1000);
 						}
 						else {
 							window.location.replace('../user');
