@@ -492,10 +492,25 @@
 			var out = 0;
 			if (document.hidden) {
 				localStorage.sessionLogin = +new Date + intervalSesi;
+				setInterval(function() {
+						var remaining = localStorage.sessionLogin - new Date();
+						if ( remaining > 0 ) {
+							//localStorage.sessionLogin = +new Date + intervalSesi;
+							//localStorage.removeItem('sessionLogin'); 
+   							out = 1;
+							setTimeout(function() {
+								localStorage.removeItem('sessionLogin'); 
+								//out = 1;
+							}, 1000);
+						}
+						else if ( remaining <= 0 && out == 1 )  {
+							window.location.replace('../user');
+						}				
+					}, 1000);
 			} 
 			else {
 				setInterval(function() {
-						var remaining = localStorage.sessionLogin - new Date;
+						var remaining = localStorage.sessionLogin - new Date();
 						if ( remaining > 0 ) {
 							//localStorage.sessionLogin = +new Date + intervalSesi;
 							//localStorage.removeItem('sessionLogin'); 
