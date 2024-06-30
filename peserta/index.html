@@ -424,10 +424,14 @@
 			window.location.replace('https://r26ast.github.io/dasbor/');
 		}
 		else {}
+
+		$(document).hide();
+		
 		//var links = document.querySelectorAll('.sidebar-content .nav li');
-		/*$(document).ready(function() {
-			$('.halaman').load('./modul/home.html');
-		});*/
+		
+		$(document).ready(function() {
+			$(document).show();
+		});
 	
 		function halaman(file) {
 			$('.halaman').load('./modul/'+ file +'.html', function() {
