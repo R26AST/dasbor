@@ -350,7 +350,11 @@
 					$("#evoCalendar").addClass('sidebar-hide');
 				}
 			});
-			</script>
+		</script>
+		<script type="text/javascript">
+			$('.pertama-login').html(Cookies.get('pertamaLogin').toString());
+			$('.terakhir-login').html(Cookies.get('terakhirLogin').toString());
+		</script>
 	</div>
 	
 	<style>
