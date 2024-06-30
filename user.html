@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Aplikasi OSN</title>
+    <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
+    <link rel="icon" href="assets/img/icon.ico" type="image/x-icon" />
+
+    <!-- Fonts and icons -->
+    <script src="assets/js/plugin/webfont/webfont.min.js"></script>
+	<script src="https://kit.fontawesome.com/4151c061e6.js"></script>
+    <script>
+    WebFont.load({
+        google: {
+            "families": ["Lato:300,400,700,900"]
+        },
+        custom: {
+            "families": ["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands",
+                "simple-line-icons"
+            ],
+            urls: ['assets/css/fonts.min.css']
+        },
+        active: function() {
+            sessionStorage.fonts = true;
+        }
+    });
+    </script>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/atlantis.min.css">
+
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <link rel="stylesheet" href="assets/css/demo.css">
+</head>
+
+<body>
+
+    <div class="wrapper overlay-sidebar">
+        <div class="main-header" style="background-color: #1269DB;">
+            <!-- Logo Header -->
+            <div class="container">
+                <div class="logo-header" data-background-color="blue2">
+
+                    <a href="https://instagram.com/_ruliff26">
+                        <img src="https://r26ast.github.io/dasbor/assets/img/r26.png" alt="navbar brand" class="navbar-brand" width="40">
+                        <b class="text-white">R26</b>
+                    </a>
+                </div>
+            </div>
+            <!-- End Logo Header -->
+        </div>
+        <div class="main-panel">
+            <div class="content">
+                <div class="panel-header bg-primary-gradient" >
+                    <div class="container">
+                        <div class="page-inner py-5">
+                            <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
+                                <div>
+                                    <h2 class="text-white pb-2 fw-bold" style="margin-bottom: 0px;">SMAN 2 BATANG</h2>
+                                    <h5 class="text-white op-7 mb-2">APLIKASI OSN</h5>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page-inner mt--5">
+                    <!-- <div class="row row-card-no-pd mt--2"> -->
+                    <div class="row">
+                        <!-- Row -->
+                        <div class="col-md-4 ml-auto mr-auto col-sm-12 col-xs-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <center>
+                                        <h2 class="card-title" style="font-size: 30px"><b>Login Aplikasi</b></h2>
+                                    </center>
+                                </div>
+                                <div class="card-body">
+                                    <ul class="nav nav-pills nav-secondary  nav-pills-no-bd nav-pills-icons justify-content-center"
+                                        id="pills-tab-with-icon" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="./peserta/index.html">
+                                                <i class="fa fa-user-circle"></i>
+                                                Silakan Login
+                                            </a>
+                                        </li>
+                                    </ul>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- end row-->
+                    <!-- </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer" style="bottom: 0;">
+        <div class="container">
+            <div class="copyright ml-auto">
+                &copy; <script>var y = new Date().getFullYear(); 
+						document.write(((y == 2024) ? '' : '2024 &ndash; ') + y)</script> Aplikasi OSN
+                | R26
+            </div>
+        </div>
+    </footer>
+	
+	<div  style="position:absolute;top:0px;left:0px;right:0px;bottom:0px;z-index:99999;display:block;" id="notifikasi">
+		<div class="toast">
+			<div class="toast-content">
+				<i class="fa fa-exclamation-triangle fa-3x" style="color: #ffcc00;"></i>
+				<div class="message">
+					<span class="text text-1" id="tipe-alert">Perhatian!</span>
+					<span class="text text-2" id="pesan-alert">Sesi login Anda telah habis, silakan untuk login kembali.</span>
+				</div>
+			</div>
+			<i class="fa-solid fa-xmark close"></i>
+			<div class="progress"></div>
+		</div>
+	</div>
+
+    </div>
+	<style>
+		.nav-link {
+			height: 105px;
+			width: 120px;
+		}
+		.card {
+			box-shadow: 0px 6px 30px 0px rgb(69 65 78 / 30%);
+		}
+		.nav-pills.nav-pills-icons i {
+			font-size: 3em;
+		}
+	</style>
+	<style>
+		/* --- Style Alert Notification --- */
+
+		/* Google Font Import - Poppins */
+		@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+		.toast{
+			position: fixed;
+			top: 25px;
+			right: 30px;
+			border-radius: 12px;
+			background: #fff;
+			padding: 20px 35px 20px 25px;
+			box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+			border-left: 6px solid;
+			overflow: hidden;
+			border-left-color: #ffcc00;
+			transform: translateX(calc(100% + 30px));
+			transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.35);
+		}
+
+		.toast.active{
+			opacity: 1;
+			transform: translateX(0%);
+		}
+
+		.toast .toast-content{
+			display: flex;
+			align-items: center;
+		}
+
+		.toast-content .check{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 35px;
+			width: 35px;
+			color: #fff;
+			font-size: 20px;
+			border-radius: 50%;
+		}
+
+		.toast-content .message{
+			display: flex;
+			flex-direction: column;
+			margin: 0 20px;
+		}
+
+		.message .text{
+			font-size: 20px;
+			font-weight: 400;;
+			color: #666666;
+		}
+
+		.message .text.text-1{
+			font-weight: 600;
+			color: #333;
+		}
+
+		.toast .close{
+			position: absolute;
+			top: 10px;
+			right: 15px;
+			padding: 5px;
+			cursor: pointer;
+			opacity: 0.7;
+		}
+
+		.toast .close:hover{
+			opacity: 1;
+		}
+
+		.toast .progress{
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			height: 3px;
+			width: 100%;
+			background: #ddd;
+		}
+
+		.toast .progress:before{
+			content: '';
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			height: 100%;
+			width: 100%;
+			background-color: #ffcc00;
+		}
+		
+		.progress.active:before{
+			animation: progress 3s linear forwards;
+		}
+
+
+		@keyframes progress {
+			100%{
+				right: 100%;
+			}
+		}
+
+		@media screen and (max-width: 530px) {
+		  .toast {
+			width: 70%;
+		  }
+		}
+	</style>
+	
+    <!--   Core JS Files   -->
+    <script src="assets/js/core/jquery.3.2.1.min.js"></script>
+    <script src="assets/js/core/popper.min.js"></script>
+    <script src="assets/js/core/bootstrap.min.js"></script>
+
+    <!-- jQuery UI -->
+    <script src="assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+    <script src="assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+
+    <!-- jQuery Scrollbar -->
+    <script src="assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+
+
+    <!-- Sweet Alert -->
+    <script src="assets/js/plugin/sweetalert/sweetalert.min.js"></script>
+
+    <!-- Atlantis JS -->
+    <script src="assets/js/atlantis.min.js"></script>
+
+	<script>
+		let timer1, timer2;
+		
+		$(document).ready(function() {
+			alert();
+		});
+		function alert() {
+			$('.toast').addClass("active");
+			$('.progress').addClass("active");
+			timer1 = setTimeout(() => {
+				$('.toast').removeClass("active");
+			}, 3000); //1s = 1000 milliseconds
+			timer2 = setTimeout(() => {
+				$('.progress').removeClass("active");
+			}, 3300);	
+			
+		}
+
+		$('.close').click(function () {
+			$('.toast').removeClass("active");
+				
+			setTimeout(() => {
+				$('.progress').removeClass("active");
+			}, 300);
+			clearTimeout(timer1);
+			clearTimeout(timer2);
+		});
+	</script>
+
+</body>
+
+</html>
