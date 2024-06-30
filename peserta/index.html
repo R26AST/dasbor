@@ -468,20 +468,22 @@
 
 		document.addEventListener("visibilitychange", () => {
 			var intervalSesi = 1 * 60 * 1000;
-			
+			var out = 0;
 			if (document.hidden) {
 				localStorage.sessionLogin = +new Date + intervalSesi;
 			} 
 			else {
 				setInterval(function() {
 						var remaining = localStorage.sessionLogin - new Date;
-						if( remaining > 0 ) {
+						if ( remaining > 0 ) {
 							//localStorage.sessionLogin = +new Date + intervalSesi;
+							localStorage.removeItem('sessionLogin'); 
 							setTimeout(function() {
-								localStorage.removeItem('sessionLogin'); 
+								//localStorage.removeItem('sessionLogin'); 
+								out = 1;
 							}, 1000);
 						}
-						else {
+						else if ( remaining <= 0 && out == 1 )  {
 							window.location.replace('../user');
 						}				
 					}, 1000);
