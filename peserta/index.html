@@ -40,7 +40,7 @@
 
 </head>
 <body>
-	<div class="wrapper">
+	<div class="wrapper" style="display: none">
 		<div class="main-header">
 			<!-- Logo Header -->
 			<div class="logo-header" data-background-color="blue">
@@ -425,12 +425,12 @@
 		}
 		else {}
 
-		$('body').hide();
+		//$('body').hide();
 		
 		//var links = document.querySelectorAll('.sidebar-content .nav li');
 		
 		$(document).ready(function() {
-			$('body').show();
+			$('.wrapper').show();
 		});
 	
 		function halaman(file) {
