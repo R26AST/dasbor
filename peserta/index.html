@@ -465,6 +465,25 @@
 			Cookies.remove('user');
 			window.location.replace('https://r26ast.github.io/dasbor/');
 		});
+
+		document.addEventListener("visibilitychange", () => {
+			var intervalSesi = 5 * 60 * 1000;
+			
+			if (document.hidden) {
+				localStorage.sessionLogin = +new Date + intervalSesi;
+			} 
+			else {
+				setInterval(function() {
+						var remaining = localStorage.sessionLogin - new Date;
+						if( remaining >= 0 ) {
+							localStorage.removeItem('sessionLogin');
+						}
+						else {
+							window.location.replace('user');
+						}				
+					}, 1000);
+			}
+		});	
 	</script>
 	
 
