@@ -79,7 +79,12 @@ $('.submit').click(function () {
 							if($('.pass').val() == userData["password"]) {
 								console.log("success");
 								success('Anda berhasil masuk');
-								Cookies.set('user', userData["user"], { expires: 365 });
+								Cookies.set('user', userData["user"], {
+									expires : 1, 
+									path    : '/dasbor/', 
+									domain  : 'r26ast.github.io', 
+									secure  : true
+								});
 								cekCookie();
 								if(userData["kategori"] == 'admin') {
 									setTimeout(function() {window.location.replace('./admin/');}, 3310);
