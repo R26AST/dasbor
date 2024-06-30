@@ -35,6 +35,7 @@
 
 	<!-- Ajax -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
 
 </head>
@@ -123,7 +124,7 @@
 										<div class="dropdown-divider"></div>
 										<a class="dropdown-item" href="javascript:halaman('profil');" >Profil Saya</a>
 										<div class="dropdown-divider"></div>
-										<a class="dropdown-item" href="logout.php">Logout</a>
+										<a class="dropdown-item" data-toggle="modal" data-target="#logout">Logout</a>
 									</li>
 								</div>
 							</ul>
@@ -234,7 +235,7 @@
 							</div>
 						</li> -->
 						<li class="nav-item active mt-3">
-							<a href="./logout" class="collapsed">
+							<a data-toggle="modal" data-target="#logout" class="collapsed">
 								<i class="fas fa-arrow-alt-circle-left"></i>
 								<p>Logout</p>
 							</a>							
@@ -261,7 +262,26 @@
 
 				<!-- end -->
 
-
+	<!-- Modal -->
+		<div class="modal fade" id="logout" tabindex="-1" role="dialog" aria-labelledby="logout" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h2 class="modal-title" style="font-weight-bold: 600;"><b>Konfirmasi</b></h2>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body" style="font-size: 15px;" >
+						Anda telah masuk sebagai ASTRONOMI &ndash; <script>document.write(Cookies.get('user'))</script>, konfirmasi jika Anda ingin keluar situs.
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-success" data-dismiss="modal" style="font-size: 17px;font-weight: 600;"><b>Tutup</b></button>
+						<button type="button" class="btn btn-danger logout" style="font-size: 17px;font-weight: 600;"><b>Keluar</b></button>
+					</div>
+				</div>
+			</div>
+		</div>
 				
 			</div>
 		<footer class="footer">
@@ -390,7 +410,7 @@
 	<script src="../assets/js/setting-demo.js"></script> -->
 	
 	<script type="text/javascript">
-		var links = document.querySelectorAll('.sidebar-content .nav li');
+		//var links = document.querySelectorAll('.sidebar-content .nav li');
 		/*$(document).ready(function() {
 			$('.halaman').load('./modul/home.html');
 		});*/
@@ -399,12 +419,12 @@
 			$('.halaman').load('./modul/'+ file +'.html', function() {
 				$('.halaman').append($('.tagsJS').html());
 			});
-			if(file === 'home') {
+			/* if(file === 'home') {
 				links.forEach(function(element) {
 					element.classList.remove('active');
 				});
 			   	$('.dasbor').addClass('active');
-			}
+			} */
 			console.log(file);
 		}
 		halaman('home');
@@ -420,7 +440,7 @@
 		    }
 		};
 		
-		links.forEach(function(element) {
+		/*links.forEach(function(element) {
 			element.addEventListener('click', function(e) {
 				//e.preventDefault();
 				links.forEach(function(element) {
@@ -428,6 +448,12 @@
 				});
 				this.classList.add('active');
 			});
+		});*/
+		
+		$('.logout').click(function() {
+			//console.log('keluar');
+			Cookies.remove('user');
+			window.location.replace('https://r26ast.github.io/dasbor/');
 		});
 	</script>
 	
