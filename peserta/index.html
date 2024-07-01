@@ -351,6 +351,7 @@
 			});
 		</script>
 		<script type="text/javascript">
+			$('.user').html(Cookies.get('user').toUpperCase());
 			$('.pertama-login').html(Cookies.get('pertamaLogin').toString());
 			$('.terakhir-login').html(Cookies.get('terakhirLogin').toString());
 		</script>
