@@ -129,10 +129,20 @@
 	  
     </section>
 
+	  <div class="modal fade" id="loader" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="loader" aria-hidden="true">
+		<!-- <div class="modal-dialog" role="document">
+		</div> -->
+	</div>
+
     <!--=============== JS ===============-->
     <script src="./assets/js/main.js"></script>
     <!--<script src="./assets/js/notif.js"></script>-->
 	<script src="./assets/js/app.js"></script>
-
+	<script type="text/javascript">
+		$('#loader').modal('show');
+		$(document).ready(function() {
+			$('#loader').modal('hide');
+		});
+	</script>
   </body>
 </html>
