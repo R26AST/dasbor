@@ -130,14 +130,8 @@
 	  
     </section>
 
-	<div class="modal fade" id="loader" tabindex="-1">
-		<!-- <div class="modal-dialog" role="document">
-		</div> -->
-		<img class="loader" src="./assets/img/loader.gif"> 
-	</div> 
-	<!-- <div style="position:absolute;top:0px;left:0px;right:0px;bottom:0px;background:#000;opacity:0.5;z-index:99999;display:none" id="loader">
-		<img class="loader" src="./assets/img/loader.gif">
-	</div> -->
+	<img class="loader" src="./assets/img/loader.gif"> 
+	<div style="position:fixed;top:0px;left:0px;right:0px;bottom:0px;background:#000;opacity:0.5;z-index:99999;display:block" id="loader"></div> 
 
 
     <!--=============== JS ===============-->
@@ -146,12 +140,11 @@
 	<script src="./assets/js/app.js"></script>
 	<script src="./assets/js/core/bootstrap.min.js"></script>
 	<script type="text/javascript">
-		$('#loader').modal('show');
 		//$('#loader').show();
+		//$('.loader').show();
 		$(document).ready(function() {
-			//$('#loader').modal('hide');
 			$('#loader').fadeOut();
-			$('.modal-backdrop').fadeOut();
+			$('.loader').fadeOut();
 			//$('#loader').hide();
 		});
 	</script>
