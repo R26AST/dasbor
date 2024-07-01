@@ -330,3 +330,12 @@ a {
   border-radius: 8px;
   background: #c2c9d2;
 }
+
+.loader {
+	  margin: 0;
+	  position: absolute;
+	  top: 50%;
+	  left: 50%;
+	  -ms-transform: translate(-50%, -50%);
+	  transform: translate(-50%, -50%);
+	}
