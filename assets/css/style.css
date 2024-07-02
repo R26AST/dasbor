@@ -353,7 +353,8 @@ section {
   }
 
   .navbar ul {
-    display: block;
+    display: inherit;
+    
   }
 }
 
