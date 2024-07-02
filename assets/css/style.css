@@ -349,11 +349,11 @@ section {
 
 @media (max-width: 991px) {
   .mobile-nav-toggle {
-    display: block;
+    display: none;
   }
 
   .navbar ul {
-    display: none;
+    display: block;
   }
 }
 
