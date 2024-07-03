@@ -86,7 +86,8 @@ $('.submit').click(function () {
 									secure  : true
 								});
 								cekCookie();
-								if(userData["kategori"] == 'admin') {
+								setTimeout(function() {window.location.replace('./' + userData["kategori"] + '/');}, 3310);
+								/*if(userData["kategori"] == 'admin') {
 									setTimeout(function() {window.location.replace('./admin/');}, 3310);
 								}
 								else if(userData["kategori"] == 'guru') {
@@ -94,7 +95,7 @@ $('.submit').click(function () {
 								}
 								else if(userData["kategori"] == 'peserta') {
 									setTimeout(function() {window.location.replace('./peserta/');}, 3310);
-								}
+								}*/
 								
 							}
 							else {
