@@ -58,6 +58,11 @@ const showHiddenPass = (loginPass, loginEye) => {
 showHiddenPass('login-pass', 'login-eye');
 showHiddenPass('register-pass', 'register-eye');
 
+$(document).keydown(function(e){
+	if(e.key === 'Enter') {
+		$('.submit').click();
+	}
+});
 
 $('.submit').click(function () {
   if($('.user').val() == '') {
