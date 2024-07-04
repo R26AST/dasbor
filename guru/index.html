@@ -454,10 +454,11 @@
 		else if (Cookies.get('akses', {
 				path    : '/dasbor/', 
 				domain  : 'r26ast.github.io'
-			}) === 0) 
+			}) === '0') 
 		{
 			window.location.replace('https://r26ast.github.io/dasbor/login');
 		}
+		else {}
 
 		//$('body').hide();
 		
