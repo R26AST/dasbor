@@ -124,11 +124,29 @@ $('.submit').click(function () {
 });
 
 function cekCookie() {
-  let log = Cookies.get('pertamaLogin');
+  let log = Cookies.get('pertamaLogin', {
+		path    : '/dasbor/', 
+		domain  : 'r26ast.github.io'
+	});
   if (typeof log === "undefined") {
-    Cookies.set('pertamaLogin', new Date(), { expires: 365 });
-    Cookies.set('terakhirLogin', new Date(), { expires: 30 });
+	Cookies.set('pertamaLogin', new Date(), {
+		expires : 365, 
+		path    : '/dasbor/', 
+		domain  : 'r26ast.github.io', 
+		secure  : true
+	});
+	Cookies.set('terakhirLogin', new Date(), {
+		expires : 30, 
+		path    : '/dasbor/', 
+		domain  : 'r26ast.github.io', 
+		secure  : true
+	});
   } else {
-    Cookies.set('terakhirLogin', new Date(), { expires: 30 });
+	Cookies.set('terakhirLogin', new Date(), {
+		expires : 30, 
+		path    : '/dasbor/', 
+		domain  : 'r26ast.github.io', 
+		secure  : true
+	});
   }
 }
