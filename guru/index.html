@@ -96,7 +96,7 @@
 								<div class="dropdown-divider"></div>
 								<a class="dropdown-item" href="./en" style="font-size: 14px;"><span class="fi fi-gb"></span> &nbsp;English</a>
 								<!-- <div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="./jv" style="font-size: 14px;">Jawa</a> -->
+								<a class="dropdown-item" href="./jv" style="font-size: 14px;">Jawa</a> -
 								<div class="dropdown-divider"></div>
 								<a class="dropdown-item" href="./jp" style="font-size: 14px;"><span class="fi fi-jp"></span> &nbsp;日本語</a>
 							</div> 
@@ -356,9 +356,18 @@
 			});
 		</script>
 		<script type="text/javascript">
-			$('.username').html(Cookies.get('user').toUpperCase());
-			$('.pertama-login').html(Cookies.get('pertamaLogin').toString());
-			$('.terakhir-login').html(Cookies.get('terakhirLogin').toString());
+			$('.username').html(Cookies.get('user', {
+				path    : '/dasbor/', 
+				domain  : 'r26ast.github.io'
+			}).toUpperCase());
+			$('.pertama-login').html(Cookies.get('pertamaLogin', {
+				path    : '/dasbor/', 
+				domain  : 'r26ast.github.io'
+			}).toString());
+			$('.terakhir-login').html(Cookies.get('terakhirLogin', {
+				path    : '/dasbor/', 
+				domain  : 'r26ast.github.io'
+			}).toString());
 		</script>
 	</div>
 	
@@ -435,10 +444,20 @@
 	<script src="../assets/js/setting-demo.js"></script> -->
 	
 	<script type="text/javascript">
-		if(typeof Cookies.get('user') === "undefined") {
+		if(typeof Cookies.get('user', {
+				path    : '/dasbor/', 
+				domain  : 'r26ast.github.io'
+			}) === "undefined")
+		{
 			window.location.replace('https://r26ast.github.io/dasbor/login');
 		}
-		else {}
+		else if (Cookies.get('akses', {
+				path    : '/dasbor/', 
+				domain  : 'r26ast.github.io'
+			}) === 0) 
+		{
+			window.location.replace('https://r26ast.github.io/dasbor/login');
+		}
 
 		//$('body').hide();
 		
