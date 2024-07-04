@@ -350,7 +350,10 @@
 			});
 		</script>
 		<script type="text/javascript">
-			$('.username').html(Cookies.get('user').toUpperCase());
+			$('.username').html(Cookies.get('user', {
+				path    : '/dasbor/', 
+				domain  : 'r26ast.github.io'
+			}).toUpperCase());
 			$('.pertama-login').html(Cookies.get('pertamaLogin', {
 				path    : '/dasbor/', 
 				domain  : 'r26ast.github.io'
