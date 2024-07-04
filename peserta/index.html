@@ -351,8 +351,14 @@
 		</script>
 		<script type="text/javascript">
 			$('.username').html(Cookies.get('user').toUpperCase());
-			$('.pertama-login').html(Cookies.get('pertamaLogin').toString());
-			$('.terakhir-login').html(Cookies.get('terakhirLogin').toString());
+			$('.pertama-login').html(Cookies.get('pertamaLogin', {
+				path    : '/dasbor/', 
+				domain  : 'r26ast.github.io'
+			}).toString());
+			$('.terakhir-login').html(Cookies.get('terakhirLogin', {
+				path    : '/dasbor/', 
+				domain  : 'r26ast.github.io'
+			}).toString());
 		</script>
 	</div>
 	
