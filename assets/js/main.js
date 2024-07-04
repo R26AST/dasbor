@@ -87,15 +87,22 @@ $('.submit').click(function () {
 								});
 								cekCookie();
 								setTimeout(function() {window.location.replace('./' + userData["kategori"] + '/');}, 3310);
-								/*if(userData["kategori"] == 'admin') {
-									setTimeout(function() {window.location.replace('./admin/');}, 3310);
-								}
-								else if(userData["kategori"] == 'guru') {
-									setTimeout(function() {window.location.replace('./guru/');}, 3310);
+								if(userData["kategori"] == 'admin' || userData["kategori"] == 'guru') {
+									Cookies.set('akses', 1, {
+										expires : 1, 
+										path    : '/dasbor/', 
+										domain  : 'r26ast.github.io', 
+										secure  : true
+									});
 								}
 								else if(userData["kategori"] == 'peserta') {
-									setTimeout(function() {window.location.replace('./peserta/');}, 3310);
-								}*/
+									Cookies.set('akses', 0, {
+										expires : 1, 
+										path    : '/dasbor/', 
+										domain  : 'r26ast.github.io', 
+										secure  : true
+									});
+								}
 								
 							}
 							else {
