@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>Peserta | Aplikasi OSN</title>
+	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
+	<link rel="icon" href="https://r26ast.github.io/dasbor/assets/img/icon.ico" type="image/x-icon"/>
+
+	<!-- Fonts and icons -->
+	<script src="https://kit.fontawesome.com/4151c061e6.js"></script>
+	<script src="https://r26ast.github.io/dasbor/assets/js/plugin/webfont/webfont.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css"/>
+	
+	<script>
+		WebFont.load({
+			google: {"families":["Lato:300,400,700,900"]},
+			custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"], urls: ['https://r26ast.github.io/dasbor/assets/css/fonts.min.css']},
+			active: function() {
+				sessionStorage.fonts = true;
+			}
+		});
+	</script>
+
+	<!-- CSS Files -->
+	<link rel="stylesheet" href="https://r26ast.github.io/dasbor/assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://r26ast.github.io/dasbor/assets/css/atlantis.min.css">
+	<link rel="stylesheet" type="text/css" href="https://r26ast.github.io/dasbor/assets/evo-calendar/css/evo-calendar.css">
+	<link rel="stylesheet" type="text/css" href="https://r26ast.github.io/dasbor/assets/evo-calendar/css/evo-calendar.min.css">
+	<link rel="stylesheet" type="text/css" href="https://r26ast.github.io/dasbor/assets/evo-calendar/css/evo-calendar.orange-coral.min.css">
+	<link rel="stylesheet" type="text/css" href="https://r26ast.github.io/dasbor/assets/evo-calendar/css/evo-calendar.midnight-blue.min.css">
+	<link rel="stylesheet" type="text/css" href="https://r26ast.github.io/dasbor/assets/evo-calendar/css/evo-calendar.royal-navy.min.css">
+
+	<!-- CSS Just for demo purpose, don't include it in your project 
+	<link rel="stylesheet" href="../assets/css/demo.css"> -->
+
+	<!-- Ajax -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+
+</head>
+<body>
+	<div class="wrapper">
+		<div class="main-header">
+			<!-- Logo Header -->
+			<div class="logo-header" data-background-color="blue">
+				
+				<a href="index.php" class="logo">
+					<!-- <img src="../assets/img/mts.png" alt="navbar brand" class="navbar-brand" width="40"> -->
+					<b class="text-white">SMAN 2 BATANG</b>
+				</a>
+				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon">
+						<i class="icon-menu"></i>
+					</span>
+				</button>
+				<button class="topbar-toggler more"><i class="icon-options-vertical"></i></button>
+				<div class="nav-toggle">
+					<button class="btn btn-toggle toggle-sidebar">
+						<i class="icon-menu"></i>
+					</button>
+				</div>
+			</div>
+			<!-- End Logo Header -->
+
+			<!-- Navbar Header -->
+			<nav class="navbar navbar-header navbar-expand-lg" data-background-color="blue2">
+				
+				<div class="container-fluid">
+				<!-- 	<div class="collapse" id="search-nav">
+						<form class="navbar-left navbar-form nav-search mr-md-3">
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<button type="submit" class="btn btn-search pr-1">
+										<i class="fa fa-search search-icon"></i>
+									</button>
+								</div>
+								<input type="text" placeholder="Search ..." class="form-control">
+							</div>
+						</form>
+					</div> -->
+					<ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
+						<!-- <li class="nav-item toggle-nav-search hidden-caret">
+							<a class="nav-link" data-toggle="collapse" href="#search-nav" role="button" aria-expanded="false" aria-controls="search-nav">
+								<i class="fa fa-search"></i>
+							</a>
+						</li> -->
+						
+						<li class="nav-item">
+							<div class="btn-group">
+								<button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									<span class="fi fi-jp"></span>&nbsp;日本語
+								</button>
+							<div class="dropdown-menu"style="background-color: #F9F5F6;" >
+								<a class="dropdown-item" href="../" style="font-size: 14px;"><span class="fi fi-id"></span> &nbsp;Indonesia</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="../en" style="font-size: 14px;"><span class="fi fi-gb"></span> &nbsp;English</a>
+								<!-- <div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="./jv" style="font-size: 14px;">Jawa</a> -->
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item active" href="../jp" style="font-size: 14px;"><span class="fi fi-jp"></span> &nbsp;日本語</a>
+							</div> 
+						</li>
+						
+						<li class="nav-item dropdown hidden-caret">
+							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
+								<div class="avatar-sm">
+									<img src="https://r26ast.github.io/dasbor/assets/img/user.jpg" alt="..." class="avatar-img rounded-circle">
+								</div>
+							</a>
+							<ul class="dropdown-menu dropdown-user animated fadeIn">
+								<div class="dropdown-user-scroll scrollbar-outer">
+									<li>
+										<div class="user-box">
+											<div class="avatar-lg"><img src="https://r26ast.github.io/dasbor/assets/img/user.jpg" alt="image profile" class="avatar-img rounded"></div>
+											<div class="u-text">
+												<h4>PUTRAKU RULIFF ABBAS</h4>
+												<p class="text-muted">OSN ASTRONOMI</p>
+												<a href="?page=jadwal" class="btn btn-xs btn-secondary btn-sm">Jadwal Mengajar</a>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="dropdown-divider"></div>
+										<a class="dropdown-item" href="javascript:halaman('profil');" >私のプロフィール</a>
+										<div class="dropdown-divider"></div>
+										<a class="dropdown-item" href="logout.php">ログアウト</a>
+									</li>
+								</div>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</nav>
+			<!-- End Navbar -->
+		</div>
+
+		<!-- Sidebar -->
+		<div class="sidebar sidebar-style-2">			
+			<div class="sidebar-wrapper scrollbar scrollbar-inner">
+				<div class="sidebar-content">
+					<div class="user">
+						<div class="avatar-sm float-left mr-2">
+							<img src="https://r26ast.github.io/dasbor/assets/img/user.jpg" alt="..." class="avatar-img rounded-circle">
+						</div>
+						<div class="info">
+							<a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
+								<span>
+								PUTRAKU RULIFF ABBAS
+									<span class="user-level">OSN ASTRONOMI</span>
+									<span class="caret"></span>
+								</span>
+							</a>
+							<div class="clearfix"></div>
+
+							<div class="collapse in" id="collapseExample">
+								<ul class="nav">
+									<li>
+										<a href="javascript:halaman('profil');" >
+											<span class="link-collapse">私のプロフィール</span>
+										</a>
+									</li>
+									
+								</ul>
+							</div>
+						</div>
+					</div>
+					<ul class="nav nav-primary">
+						<li class="nav-item active">
+							<a href="" class="collapsed">
+								<i class="fas fa-home"></i>
+								<p>ダッシュボード</p>
+							</a>							
+						</li>
+						<li class="nav-section">
+							<span class="sidebar-mini-icon">
+								<i class="fa fa-ellipsis-h"></i>
+							</span>
+							<h4 class="text-section"></h4>
+						</li>
+						<li class="nav-item">
+							<a href="javascript:halaman('ujian');">
+								<i class="fas fa-clipboard-check"></i>
+								<p>テスト</p>
+							</a>
+						
+						</li>
+						<li class="nav-item">
+							<a data-toggle="collapse" href="#sidebarLayouts">
+								<i class="fas fa-list-alt"></i>
+								<p>特徴</p>
+								<span class="caret"></span>
+							</a>
+							<div class="collapse" id="sidebarLayouts">
+								<ul class="nav nav-collapse">
+									<li>
+										<a href="javascript:halaman('tes_jaringan');">
+											<span class="sub-item">ネットワークテスト</span>
+										</a>
+									</li>
+									<li>
+										<a href="javascript:halaman('kalender');">
+											<span class="sub-item">カレンダー</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+							<li class="nav-item">
+							<a data-toggle="collapse" href="#rekapAbsen">
+								<i class="fas fa-clipboard-list"></i>
+								<p>Rekap Absen</p>
+								<span class="caret"></span>
+							</a>
+							<div class="collapse" id="rekapAbsen">
+								<ul class="nav nav-collapse">
+									<?php
+
+
+									foreach ($mengajar as $dm) { ?>
+									<li>
+										<a href="?page=rekap&pelajaran=<?=$dm['id_mengajar'] ?> ">
+											<span class="sub-item"><!-- <?=strtoupper($dm['mapel']); ?> -->KELAS (<?=strtoupper($dm['nama_kelas']); ?>)</span>
+										</a>
+									</li>
+								<?php } ?>
+								</ul>
+							</div>
+						</li>
+						<li class="nav-item active mt-3">
+							<a href="logout.php" class="collapsed">
+								<i class="fas fa-arrow-alt-circle-left"></i>
+								<p>ログアウト</p>
+							</a>							
+						</li>
+	
+					<!-- 
+						<li class="mx-4 mt-2">
+							<a href="logout.php" class="btn btn-primary btn-block"><span class="btn-label"> <i class="fas fa-arrow-alt-circle-left"></i> </span> Logout</a> 
+						</li> -->
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- End Sidebar -->
+
+		<div class="main-panel">
+			<div class="content">
+
+				<!-- Halaman dinamis -->
+				
+				<section class="halaman">
+					
+				</section>
+
+				<!-- end -->
+
+
+				
+			</div>
+		<footer class="footer">
+				<div class="container">
+					<div class="copyright ml-auto">
+						&copy; <script>document.write(new Date().getFullYear())</script> Aplikasi OSN } R26
+					</div>				
+				</div>
+			</footer>
+		</div>
+		
+	
+	</div>
+
+	<div class="tagsJS">
+		<script type="text/javascript" src="https://r26ast.github.io/dasbor/assets/js/page-jp.js"></script>
+		<script type="text/javascript" src="https://r26ast.github.io/dasbor/assets/evo-calendar/js/evo-calendar-2.js"></script>
+		<script type="text/javascript">
+			$('#evoCalendar').addClass('event-hide');
+			$('#evoCalendar').evoCalendar({
+				language:'jp',
+				theme: 'Royal Navy',
+				//theme: 'Orange Coral',
+				todayHighlight: true,
+				sidebarToggler: true,
+				eventListToggler: true,
+				canAddEvent: false,
+				format:'mm/dd/yyyy',
+				eventHeaderFormat:'d MM yyyy',
+				calendarEvents: [
+					{ name: "Tahun Baru Masehi", date: new Date("2024-01-01"), type: "holiday", everyYear: true },
+					{ name: "Hari Buruh", date: new Date("2024-05-01"), type: "holiday", everyYear: true },
+					{ name: "Hari Lahir Pancasila", date: new Date("2024-06-01"), type: "holiday", everyYear: true },
+					{ name: "Hari Kemerdekaan Indonesia", toString: "Hari Kemerdekaan Indonesia", date: new Date("1945-08-17"), type: "holiday", everyYear: true },
+					{ name: "Hari Raya Natal", date: new Date("2024-12-25"), type: "holiday", everyYear: true },
+					{ name: "Hari Raya Idulfitri", date: "April/10/2024", type: "event" },
+					{ name: "Hari Raya Idulfitri", date: "April/11/2024", type: "event" },
+					{ name: "Hari Raya Iduladha", date: "June/17/2024", type: "event" },
+					/*{ name: "Holiday #3", date: "February/3/2020", type: "holiday" },
+					{ name: "Birthday #2", date: "February/3/2020", type: "birthday" },
+					{ name: "Holiday #4", date: "February/15/2020", type: "event" },
+					{ name: "Patient #2", date: "February/8/2020", type: "event" },
+					{ name: "Leap day", date: "February/29/2020", type: "holiday", everyYear: true }*/
+				],
+				onSelectDate: function() {
+					// console.log('onSelectDate!')
+				},
+				onAddEvent: function() {
+					console.log('onAddEvent!')
+				}
+			});
+			        // $("#evoCalendar").evoCalendar('addCalendarEvent', [...]);
+					 
+			$('#sidebarToggler').click(function() {
+				if(!$("#evoCalendar").hasClass('event-hide')) { 
+					$("#evoCalendar").addClass('event-hide');
+				}
+			});
+			$('#eventListToggler').click(function() {
+				if(!$("#evoCalendar").hasClass('sidebar-hide')) { 
+					$("#evoCalendar").addClass('sidebar-hide');
+				}
+			});
+		</script>
+	</div>
+	
+	<style>
+		/*.nav-link.active.show {
+			background: #1572e8;
+		}*/
+
+		@media screen and (min-width: 1023px) {
+			.breadcrumbs {
+				margin-left: 0;
+			}
+		}
+
+		.hari-tanggal {
+			text-transform: uppercase;
+		}
+		
+		dd {
+			margin-left: 10px;
+		}
+		dt, dd {
+			line-height: 20px;
+		}
+		dd {
+			display: block;
+			/*margin-inline-start: 40px;*/
+		}
+		
+		.contentnode {
+			list-style: none;
+		}
+	</style>
+	
+	<!--   Core JS Files
+	<script src="../assets/js/core/jquery.3.2.1.min.js"></script> -->
+	<script src="https://r26ast.github.io/dasbor/assets/js/core/popper.min.js"></script>
+	<script src="https://r26ast.github.io/dasbor/assets/js/core/bootstrap.min.js"></script>
+
+	<!-- jQuery UI -->
+	<script src="https://r26ast.github.io/dasbor/assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+	<script src="https://r26ast.github.io/dasbor/assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+
+	<!-- jQuery Scrollbar -->
+	<script src="https://r26ast.github.io/dasbor/assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+
+
+	<!-- Datatables -->
+	<script src="https://r26ast.github.io/dasbor/assets/js/plugin/datatables/datatables.min.js"></script>
+
+
+
+	<!-- Sweet Alert -->
+	<script src="https://r26ast.github.io/dasbor/assets/js/plugin/sweetalert/sweetalert.min.js"></script>
+
+	<!-- Atlantis JS -->
+	<script src="https://r26ast.github.io/dasbor/assets/js/atlantis.min.js"></script>
+
+	<!-- Atlantis DEMO methods, don't include it in your project! 
+	<script src="https://r26ast.github.io/dasbor/assets/js/setting-demo.js"></script> -->
+	
+	<script type="text/javascript">
+		/*$(document).ready(function() {
+			$('.halaman').load('./modul/home.html');
+		});*/
+	
+		function halaman(file) {
+			$('.halaman').load('./modul/'+ file +'.html', function() {
+				$('.halaman').append($('.tagsJS').html());
+			});
+			console.log(file);
+		}
+		halaman('home');
+	</script>
+	
+
+</body>
+</html>

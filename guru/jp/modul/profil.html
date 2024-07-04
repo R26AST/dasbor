@@ -1,0 +1,108 @@
+<div class="page-header">
+	<ul class="breadcrumbs">
+		<li class="nav-home">
+			<a href="javascript:halaman('home')">
+				<i class="flaticon-home"></i> 
+			</a>
+		</li>
+		<li class="separator">
+			<i class="flaticon-right-arrow"></i>
+		</li>
+		<li class="nav-item">
+			<a href="#">私のプロフィール</a>
+		</li>
+	</ul>
+</div><br>
+
+<div class="page-inner mt--5">
+	<div class="row mt--2">
+		<div class="col-md-6"> <!-- data -->
+			<div class="card">
+				<div class="card-header">
+					<h4 class="card-title">参加者の詳細</h4>
+				</div>
+				<div class="card-body">
+					<ul style="padding-left: 0px;">
+						<li class="contentnode"><dl><dt>国</dt><dd>インドネシア</dd></dl></li>
+						<!--<li class="contentnode"><dl><dt>Zona Waktu</dt><dd>Asia/Jakarta</dd></dl></li>
+						<li class="contentnode"><dl><dt>Nomor Induk Siswa Nasional</dt><dd>0000000000</dd></dl></li>
+						<li class="contentnode"><dl><dt>Kelas</dt><dd>11</dd></dl></li>
+						<li class="contentnode"><dl><dt>Jenis Kelamin</dt><dd>L</dd></dl></li>-->
+						<li class="contentnode"><dl><dt>国立学校識別番号・大学コード</dt><dd>20322740</dd></dl></li>
+						<li class="contentnode"><dl><dt>学校/大学</dt><dd>SMA NEGERI 2 BATANG</dd></dl></li>
+						<li class="contentnode"><dl><dt>カリキュラム</dt><dd>Kurikulum Merdeka</dd></dl></li>
+						<li class="contentnode"><dl><dt>地区/市</dt><dd>Kab. Batang</dd></dl></li>
+						<li class="contentnode"><dl><dt>県</dt><dd>Jawa Tengah</dd></dl></li>
+						<li class="contentnode"><dl><dt>競争</dt><dd>OSN ASTRONOMI</dd></dl></li>
+						<li class="contentnode"><dl><dt>競技年</dt><dd class="tahun"></dd></dl></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<!-- Pengaturan Akun -->
+			<div class="card">
+				<div class="card-header">
+					<h4 class="card-title">アカウント設定</h4>
+				</div>
+				<div class="card-body">
+					<ul class="nav nav-pills nav-secondary nav-pills-no-bd" id="pills-tab-without-border" role="tablist">
+						<li class="nav-item">
+							<a class="nav-link" id="pills-home-tab-nobd" data-toggle="pill" href="#pills-home-nobd" role="tab" aria-controls="pills-home-nobd" aria-selected="true">パスワードを変更する</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" id="pills-profile-tab-nobd" data-toggle="pill" href="#pills-profile-nobd" role="tab" aria-controls="pills-profile-nobd" aria-selected="false">写真を変更する</a>
+						</li>
+					</ul>
+					<div class="tab-content mt-2 mb-3" id="pills-without-border-tabContent">
+						<div class="tab-pane fade show" id="pills-home-nobd" role="tabpanel" aria-labelledby="pills-home-tab-nobd">
+							<hr>
+							<form action="" method="post">
+								<div class="form-group">
+									<input name="pass" type="text" class="form-control" placeholder="以前のパスワード">
+								</div>
+								<div class="form-group">
+									<input name="pass1" type="text" class="form-control" placeholder="新しいパスワード">
+								</div>
+								<div class="form-group">									
+									<button name="changePassword" type="submit" class="btn btn-success btn-block">パスワードを変更する</button>
+								</div>
+							</form>
+						</div>
+						<div class="tab-pane fade" id="pills-profile-nobd" role="tabpanel" aria-labelledby="pills-profile-tab-nobd">
+							<form action="" method="post" enctype="multipart/form-data">
+								<div class="form-group">
+									<label>プロフィールの写真</label>
+									<p>
+										<center>
+											<img src="../assets/img/user.jpg" class="img-thumbnail" style="height: 90px;width: 90px;">
+										</center>      		
+									</p>
+									<input type="file" name="foto"> 
+									<input type="hidden" name="id" value="">       		
+								</div> 
+								<div class="form-group">      
+									<button name="updateProfile" type="submit" class="btn btn-primary btn-block">保存</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		
+			<!-- Aktivitas Login -->
+			<div class="card">
+				<div class="card-header">
+					<h4 class="card-title">ログインアクティビティ</h4>
+				</div>
+				<div class="card-body">
+					<ul style="padding-left: 0px;">
+						<li class="contentnode"><dl><dt>初めてサイトにアクセスしたとき</dt><dd class="pertama-login"></dd></dl></li>
+						<li class="contentnode"><dl><dt>最後にサイトにアクセスしたとき</dt><dd class="terakhir-login"></dd></dl></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<a class="btn btn-default btn-back btn-lg col-md-3"><i class="fas fa-arrow-circle-left"></i> 戻る</a>
+</div>
