@@ -438,7 +438,11 @@
 	<script src="../assets/js/setting-demo.js"></script> -->
 	
 	<script type="text/javascript">
-		if(typeof Cookies.get('user') === "undefined") {
+		if(typeof Cookies.get('user', {
+				path    : '/dasbor/', 
+				domain  : 'r26ast.github.io'
+			}) === "undefined") 
+		{
 			window.location.replace('https://r26ast.github.io/dasbor/login');
 		}
 		else {}
