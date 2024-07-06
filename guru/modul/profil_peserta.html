@@ -105,3 +105,57 @@
 		color: #fff;
 	}
 </style>
+
+<!-- Edit Modal HTML -->
+	<div id="editEmployeeModal" class="modal fade">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<form>
+					<div class="modal-header">						
+						<h2 class="modal-title">Edit Nama Peserta</h2>
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					</div>
+					<div class="modal-body">					
+						<div class="form-group">
+							<label>Username Peserta</label>
+							<input type="text" class="form-control userpes" readonly>
+						</div>
+						<div class="form-group">
+							<label>Nama Peserta</label>
+							<input type="text" class="form-control namapes" required>
+						</div>
+						<div class="form-group">
+							<label>Kelas</label>
+							<input type="text" class="form-control kelas" required>
+						</div>					
+					</div>
+				</form>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-outline-secondary" data-dismiss="modal" style="font-size: 17px;font-weight: 600;"><b>Batal</b></button>
+					<button type="button" class="btn btn-success save" style="font-size: 17px;font-weight: 600;"><b>Simpan</b></button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Delete Modal HTML -->
+	<div id="deleteEmployeeModal" class="modal fade">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<form>
+					<div class="modal-header">						
+						<h2 class="modal-title">Hapus Nama Peserta</h2>
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					</div>
+					<div class="modal-body">					
+						<p style="font-size: 15px;">Apakah Anda yakin untuk menghapus nama peserta ini?</p>
+						<p class="text-warning"><small>Nama yang telah dihapus tidak dapat dikembalikan.</small></p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-outline-secondary" data-dismiss="modal" style="font-size: 17px;font-weight: 600;"><b>Batal</b></button>
+						<button type="button" class="btn btn-danger hapus" style="font-size: 17px;font-weight: 600;"><b>Hapus</b></button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
