@@ -424,7 +424,7 @@
 			}).toString());
 
 			$('.save-nama').click(function() {
-				$('.nama').text($('.form-nama').val());
+				$('.nama').html($('.form-nama').val());
 				Cookies.set('nama', $('.form-nama').val(), {
 					expires : 365, 
 					path    : '/dasbor/', 
@@ -468,9 +468,14 @@
 				if (typeof nama != "undefined") {
 					$('.list-nama').show();
 					$('.nama').text(nama);
+					$('.main-name').html(nama.toUpperCase());
 				}
 				else {
 					$('.list-nama').hide();
+					$('.main-name').html(Cookies.get('user', {
+						path    : '/dasbor/', 
+						domain  : 'r26ast.github.io'
+					}).toUpperCase());
 				} 
 			});
 		
