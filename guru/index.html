@@ -431,6 +431,16 @@
 					secure  : true
 				});
 			});
+
+			$('.hapus-nama').click(function() {
+				$('.nama').text('');
+				Cookies.remove('nama', {
+					path    : '/dasbor/', 
+					domain  : 'r26ast.github.io'
+				});
+				$('.list-nama').hide();
+				//$('#deleteNamaModal').modal('hide');
+			});
 		</script>
 		<script type="text/javascript">
 			$(document).ready(function() {
