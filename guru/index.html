@@ -424,18 +424,21 @@
 			}).toString());
 		</script>
 		<script type="text/javascript">
-			/*var dnamapes = Cookies.get('nama-peserta1', {
-				path    : '/dasbor/', 
-				domain  : 'r26ast.github.io'
-			});
-				
-			if (typeof dnamapes != "undefined") {
-				for(var i = 1; i <= 5; i++) {
-					$('.napes-'+ i +'').text(Cookies.get('nama-peserta'+ i +'', { path    : '/dasbor/', domain  : 'r26ast.github.io'}));
-					$('.kelas-'+ i +'').text(Cookies.get('kelas-peserta'+ i +'', { path    : '/dasbor/', domain  : 'r26ast.github.io'}));
+			$(document).ready(function() {
+				/*var dnamapes = Cookies.get('nama-peserta1', {
+					path    : '/dasbor/', 
+					domain  : 'r26ast.github.io'
+				});
+					
+				if (typeof dnamapes != "undefined") {
 				}
-			}
-			else {} */
+				else {*/
+					for(var i = 1; i <= 5; i++) {
+						$('.napes-'+ i +'').text(Cookies.get('nama-peserta'+ i +'', { path    : '/dasbor/', domain  : 'r26ast.github.io'}));
+						$('.kelas-'+ i +'').text(Cookies.get('kelas-peserta'+ i +'', { path    : '/dasbor/', domain  : 'r26ast.github.io'}));
+					}
+				//} 
+			});
 		
 			var indexEdit, indexDelete;
 		
