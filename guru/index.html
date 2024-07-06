@@ -423,6 +423,68 @@
 				domain  : 'r26ast.github.io'
 			}).toString());
 		</script>
+		<script type="text/javascript">
+			let d_namapes = Cookies.get('nama-peserta1', {
+				path    : '/dasbor/', 
+				domain  : 'r26ast.github.io'
+			});
+				
+			if (typeof d_namapes !== "undefined") {
+				for(var i = 1; i <= 5; i++) {
+					$('.napes-'+ i +'').text(Cookies.get('nama-peserta'+ i +'', { path    : '/dasbor/', domain  : 'r26ast.github.io'}));
+					$('.kelas-'+ i +'').text(Cookies.get('kelas-peserta'+ i +'', { path    : '/dasbor/', domain  : 'r26ast.github.io'}));
+				}
+			}
+			else {}
+		
+			var indexEdit, indexDelete;
+		
+			$('.edit').click(function(e) {
+				indexEdit = $( ".edit" ).index( this ) + 1;
+				console.log( "index " + indexEdit );
+				$('.userpes').val('AST00'+ indexEdit);
+			});
+		
+			$('.delete').click(function(e) {
+				indexDelete = $( ".delete" ).index( this ) + 1;
+				console.log( "index " + indexDelete );
+				$('.userpes').val('AST00'+ indexEdit);
+			});
+		
+			$('.save').click(function() {
+				$('.napes-'+ indexEdit +'').text($('.namapes').val());
+				$('.kelas-'+ indexEdit +'').text($('.kelas').val());
+				Cookies.set('nama-peserta'+ indexEdit +'', $('.namapes').val(), {
+					expires : 365, 
+					path    : '/dasbor/', 
+					domain  : 'r26ast.github.io', 
+					secure  : true
+				});
+				Cookies.set('kelas-peserta'+ indexEdit +'', $('.kelas').val(), {
+					expires : 365, 
+					path    : '/dasbor/', 
+					domain  : 'r26ast.github.io', 
+					secure  : true
+				});
+				$('#editEmployeeModal').modal('hide');
+				$('.namapes').val('');
+				$('.kelas').val('');
+			});
+		
+			$('.hapus').click(function() {
+				$('.napes-'+ indexDelete +'').text('');
+				$('.kelas-'+ indexDelete +'').text('');
+				Cookies.remove('nama-peserta'+ indexDelete +'', {
+					path    : '/dasbor/', 
+					domain  : 'r26ast.github.io'
+				});
+				Cookies.remove('kelas-peserta'+ indexDelete +'', {
+					path    : '/dasbor/', 
+					domain  : 'r26ast.github.io'
+				});
+				$('#deleteEmployeeModal').modal('hide');
+			});
+		</script>
 	</div>
 	
 	<style>
