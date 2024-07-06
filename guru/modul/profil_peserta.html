@@ -97,7 +97,7 @@
 							</tbody>
 						</table>
 						<div class="d-flex justify-content-end">
-							<a href="#deleteEmployeeModal" class="btn btn-danger col-md-3 delete-all" data-toggle="modal">
+							<a href="#deleteEmployeeModal" class="btn btn-danger col-md-3 delete" data-toggle="modal">
 								<i class="fa fa-trash-o" title="Delete All" aria-hidden="true"></i>
 								<b>Hapus Semua</b>
 							</a>
@@ -166,6 +166,28 @@
 					<div class="modal-footer">
 						<button type="button" class="btn btn-outline-secondary" data-dismiss="modal" style="font-size: 17px;font-weight: 600;"><b>Batal</b></button>
 						<button type="button" class="btn btn-danger hapus" style="font-size: 17px;font-weight: 600;"><b>Hapus</b></button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+<!-- Delete All Modal HTML -->
+	<div id="deleteAllModal" class="modal fade">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<form>
+					<div class="modal-header">						
+						<h2 class="modal-title">Hapus Semua Profil Peserta</h2>
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					</div>
+					<div class="modal-body">					
+						<p style="font-size: 15px;">Apakah Anda yakin untuk menghapus semua profil peserta ini?</p>
+						<p class="text-warning"><small>Profil yang telah dihapus tidak dapat dikembalikan.</small></p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-outline-secondary" data-dismiss="modal" style="font-size: 17px;font-weight: 600;"><b>Batal</b></button>
+						<button type="button" class="btn btn-danger hapus-all" style="font-size: 17px;font-weight: 600;"><b>Hapus</b></button>
 					</div>
 				</form>
 			</div>
