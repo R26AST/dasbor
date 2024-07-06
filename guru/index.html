@@ -422,6 +422,15 @@
 				path    : '/dasbor/', 
 				domain  : 'r26ast.github.io'
 			}).toString());
+
+			$('.save-nama').click(function() {
+				Cookies.set('nama', $('.form-nama').val(), {
+					expires : 365, 
+					path    : '/dasbor/', 
+					domain  : 'r26ast.github.io', 
+					secure  : true
+				});
+			});
 		</script>
 		<script type="text/javascript">
 			$(document).ready(function() {
@@ -438,6 +447,18 @@
 						$('.kelas-'+ i +'').text(Cookies.get('kelas-peserta'+ i +'', { path    : '/dasbor/', domain  : 'r26ast.github.io'}));
 					}
 				//} 
+				var nama = Cookies.get('nama', {
+					path    : '/dasbor/', 
+					domain  : 'r26ast.github.io'
+				});
+					
+				if (typeof dnamapes != "undefined") {
+					$('.list-nama').show();
+					$('.nama').text(nama);
+				}
+				else {
+					$('.list-nama').hide();
+				} 
 			});
 		
 			var indexEdit, indexDelete;
