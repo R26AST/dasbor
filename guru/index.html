@@ -487,6 +487,22 @@
 				});
 				$('#deleteEmployeeModal').modal('hide');
 			});
+
+			$('.hapus-all').click(function() {
+				for(var i = 1; i <= 5; i++) {
+					$('.napes-'+ i +'').text('');
+					$('.kelas-'+ i +'').text('');
+					Cookies.remove('nama-peserta'+ i +'', {
+						path    : '/dasbor/', 
+						domain  : 'r26ast.github.io'
+					});
+					Cookies.remove('kelas-peserta'+ i +'', {
+						path    : '/dasbor/', 
+						domain  : 'r26ast.github.io'
+					});
+				}
+				$('#deleteEmployeeModal').modal('hide');
+			});
 		</script>
 	</div>
 	
