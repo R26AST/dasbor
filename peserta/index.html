@@ -362,6 +362,29 @@
 				path    : '/dasbor/', 
 				domain  : 'r26ast.github.io'
 			}).toString());
+
+			$('.save-nama').click(function() {
+				$('.nama').text($('.form-nama').val());
+				$('.list-nama').show();
+				Cookies.set('nama', $('.form-nama').val(), {
+					expires : 365, 
+					path    : '/dasbor/peserta/', 
+					domain  : 'r26ast.github.io', 
+					secure  : true
+				});
+				$('.form-nama').val('');
+			});
+
+			$('.hapus-nama').click(function() {
+				$('.nama').text('');
+				Cookies.remove('nama', {
+					path    : '/dasbor/peserta/', 
+					domain  : 'r26ast.github.io'
+				});
+				$('.list-nama').hide();
+				$('.form-nama').val('');
+				//$('#deleteNamaModal').modal('hide');
+			});
 		</script>
 	</div>
 	
