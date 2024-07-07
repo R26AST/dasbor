@@ -407,22 +407,26 @@
 						url = fr.result;
 						let img = new Image();
 						img.src = url;
-							
-						//document.getElementById('output').append(url);
-						//localStorage.setItem('foto-profil', url);
+
 						$('.img-thumbnail').attr('src', url);
 					});
 				}
 			});
 
 			$('.simpan-foto').click(function() {
-				localStorage.setItem('foto-profil', url);
+				localStorage.setItem("foto-profil-"+ Cookies.get('user', {
+					path    : '/dasbor/', 
+					domain  : 'r26ast.github.io'
+				} + "", url);
 				$('.img-thumbnail').attr('src', url);
 				$('.avatar-img').attr('src', url);
 			});
 
 			$('.hapus-foto').click(function() {
-				localStorage.removeItem('foto-profil');
+				localStorage.removeItem("foto-profil-"+ Cookies.get('user', {
+					path    : '/dasbor/', 
+					domain  : 'r26ast.github.io'
+				} + "");
 				$('.img-thumbnail').attr('src', '../assets/img/user.jpg');
 				$('.avatar-img').attr('src', '../assets/img/user.jpg');
 			});
@@ -446,7 +450,10 @@
 					}).toUpperCase());
 				} 
 
-				let dataurl = localStorage.getItem('foto-profil');
+				let dataurl = localStorage.getItem("foto-profil-"+ Cookies.get('user', {
+					path    : '/dasbor/', 
+					domain  : 'r26ast.github.io'
+				} + "");
 
 				if (dataurl != null) {
 					$('.img-thumbnail').attr('src', dataurl);
