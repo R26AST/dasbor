@@ -386,7 +386,7 @@
 				//$('#deleteNamaModal').modal('hide');
 			});
 
-			let batasFoto = 200; //Kb
+			//let batasFoto = 200; //Kb
 			var url;
 
 			$('.foto').change(function() {			
@@ -417,6 +417,8 @@
 
 			$('.simpan-foto').click(function() {
 				localStorage.setItem('foto-profil', url);
+				$('.img-thumbnail').attr('src', url);
+				$('.avatar-img').attr('src', url);
 			});
 
 			$('.hapus-foto').click(function() {
