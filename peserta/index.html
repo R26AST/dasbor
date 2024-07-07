@@ -417,7 +417,7 @@
 				localStorage.setItem("foto-profil-"+ Cookies.get('user', {
 					path    : '/dasbor/', 
 					domain  : 'r26ast.github.io'
-				} + "", url);
+				}) + "", url);
 				$('.img-thumbnail').attr('src', url);
 				$('.avatar-img').attr('src', url);
 			});
@@ -426,7 +426,7 @@
 				localStorage.removeItem("foto-profil-"+ Cookies.get('user', {
 					path    : '/dasbor/', 
 					domain  : 'r26ast.github.io'
-				} + "");
+				}) + "");
 				$('.img-thumbnail').attr('src', '../assets/img/user.jpg');
 				$('.avatar-img').attr('src', '../assets/img/user.jpg');
 			});
@@ -453,7 +453,7 @@
 				let dataurl = localStorage.getItem("foto-profil-"+ Cookies.get('user', {
 					path    : '/dasbor/', 
 					domain  : 'r26ast.github.io'
-				} + "");
+				}) + "");
 
 				if (dataurl != null) {
 					$('.img-thumbnail').attr('src', dataurl);
