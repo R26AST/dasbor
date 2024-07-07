@@ -445,6 +445,50 @@
 				$('.form-nama').val('');
 				//$('#deleteNamaModal').modal('hide');
 			});
+
+			var url;
+
+			$('.foto').change(function() {			
+				//const file = $('.foto').files[0]; 
+				let file = $('.foto').prop('files')[0];
+				var imgKbytes = Math.round(parseInt(file.size)/1024); 
+				console.log(imgKbytes);
+
+				if(imgKbytes >= 200) {
+					//document.getElementById('output').append('Ukuran gambar terlalu besar');
+					alert('Ukuran gambar terlalu besar! Maksimum 200Kb.');
+					return false;
+				}
+				else {	
+					let fr = new FileReader();
+					fr.readAsDataURL(file);
+					fr.addEventListener('load', () => {
+						url = fr.result;
+						let img = new Image();
+						img.src = url;
+
+						$('.img-thumbnail').attr('src', url);
+					});
+				}
+			});
+
+			$('.simpan-foto').click(function() {
+				localStorage.setItem("foto-profil-"+ Cookies.get('user', {
+					path    : '/dasbor/', 
+					domain  : 'r26ast.github.io'
+				}) + "", url);
+				$('.img-thumbnail').attr('src', url);
+				$('.avatar-img').attr('src', url);
+			});
+
+			$('.hapus-foto').click(function() {
+				localStorage.removeItem("foto-profil-"+ Cookies.get('user', {
+					path    : '/dasbor/', 
+					domain  : 'r26ast.github.io'
+				}) + "");
+				$('.img-thumbnail').attr('src', '../assets/img/user.jpg');
+				$('.avatar-img').attr('src', '../assets/img/user.jpg');
+			});
 		</script>
 		<script type="text/javascript">
 			$(document).ready(function() {
@@ -477,7 +521,21 @@
 						path    : '/dasbor/', 
 						domain  : 'r26ast.github.io'
 					}).toUpperCase());
-				} 
+				}
+
+				let dataurl = localStorage.getItem("foto-profil-"+ Cookies.get('user', {
+					path    : '/dasbor/', 
+					domain  : 'r26ast.github.io'
+				}) + "");
+
+				if (dataurl != null) {
+					$('.img-thumbnail').attr('src', dataurl);
+					$('.avatar-img').attr('src', dataurl);
+				}
+				else {
+					$('.img-thumbnail').attr('src', '../assets/img/user.jpg');
+					$('.avatar-img').attr('src', '../assets/img/user.jpg');
+				}
 			});
 		
 			var indexEdit, indexDelete;
