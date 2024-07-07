@@ -386,12 +386,12 @@
 				//$('#deleteNamaModal').modal('hide');
 			});
 
-			const batasFoto = 200; //Kb
+			let batasFoto = 200; //Kb
 			var url;
 
 			$('.foto').change(function() {			
 				//const file = $('.foto').files[0]; 
-				const file = $('.foto').prop('files')[0];
+				let file = $('.foto').prop('files')[0];
 				var imgKbytes = Math.round(parseInt(file.size)/1024); 
 				console.log(imgKbytes);
 
@@ -401,17 +401,17 @@
 					return false;
 				}
 				else {	
-					const fr = new FileReader();
+					let fr = new FileReader();
 					fr.readAsDataURL(file);
 					fr.addEventListener('load', () => {
-						url = fr.result
-						const img = new Image();
+						url = fr.result;
+						let img = new Image();
 						img.src = url;
 							
 						//document.getElementById('output').append(url);
 						//localStorage.setItem('foto-profil', url);
 						$('.img-thumbnail').attr('src', url);
-					})
+					});
 				}
 			});
 
@@ -444,7 +444,7 @@
 					}).toUpperCase());
 				} 
 
-				const dataurl = localStorage.getItem('foto-profil');
+				let dataurl = localStorage.getItem('foto-profil');
 
 				if (dataurl != null) {
 					$('.img-thumbnail').attr('src', dataurl);
