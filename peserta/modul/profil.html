@@ -30,6 +30,7 @@
 						<li class="contentnode"><dl><dt>Nomor Pokok Sekolah Nasional/Kode Perguruan Tinggi</dt><dd>20322740</dd></dl></li>
 						<li class="contentnode"><dl><dt>Sekolah/Universitas</dt><dd>SMA NEGERI 2 BATANG</dd></dl></li>
 						<li class="contentnode"><dl><dt>Username</dt><dd class="username"></dd></dl></li>
+						<li class="contentnode list-nama" style="display: none;"><dl><dt>Nama</dt><dd class="nama"></dd></dl></li>
 						<li class="contentnode"><dl><dt>Kurikulum</dt><dd>Kurikulum Merdeka</dd></dl></li>
 						<li class="contentnode"><dl><dt>Kabupaten/Kota</dt><dd>Kab. Batang</dd></dl></li>
 						<li class="contentnode"><dl><dt>Provinsi</dt><dd>Jawa Tengah</dd></dl></li>
@@ -55,9 +56,9 @@
 						</li>
 					</ul>
 					<div class="tab-content mt-2 mb-3" id="pills-without-border-tabContent">
-						<div class="tab-pane fade show" id="pills-home-nobd" role="tabpanel" aria-labelledby="pills-home-tab-nobd">
+						<!-- <div class="tab-pane fade show" id="pills-home-nobd" role="tabpanel" aria-labelledby="pills-home-tab-nobd">
 							<hr>
-							<form action="" method="post">
+							<form>
 								<div class="form-group">
 										<input name="pass" type="text" class="form-control" placeholder="Password Lama">
 								</div>
@@ -68,6 +69,18 @@
 									<button name="changePassword" type="submit" class="btn btn-success btn-block">Ganti Password</button>
 								</div>
 							</form>
+						</div> -->
+						<div class="tab-pane fade show" id="pills-home-nobd" role="tabpanel" aria-labelledby="pills-home-tab-nobd">
+							<hr>
+							<form>
+								<div class="form-group">
+									<input type="text" class="form-control form-nama" placeholder="Isikan Nama Anda" required>
+								</div>
+							</form>
+							<div class="form-group">									
+								<button type="button" class="btn btn-primary save-nama">Simpan</button>
+								<button type="button" class="btn btn-danger hapus-nama">Hapus</button>
+							</div>
 						</div>
 						<div class="tab-pane fade" id="pills-profile-nobd" role="tabpanel" aria-labelledby="pills-profile-tab-nobd">
 							<form action="" method="post" enctype="multipart/form-data">
