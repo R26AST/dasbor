@@ -424,7 +424,8 @@
 			}).toString());
 
 			$('.save-nama').click(function() {
-				$('.nama').html($('.form-nama').val());
+				$('.nama').text($('.form-nama').val());
+				$('.list-nama').show();
 				Cookies.set('nama', $('.form-nama').val(), {
 					expires : 365, 
 					path    : '/dasbor/', 
