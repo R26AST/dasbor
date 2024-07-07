@@ -385,6 +385,26 @@
 				$('.form-nama').val('');
 				//$('#deleteNamaModal').modal('hide');
 			});
+
+			$(document).ready(function() {
+				var nama = Cookies.get('nama', {
+					path    : '/dasbor/', 
+					domain  : 'r26ast.github.io'
+				});
+					
+				if (typeof nama != "undefined") {
+					$('.list-nama').show();
+					$('.nama').text(nama);
+					$('.main-name').text(nama.toUpperCase());
+				}
+				else {
+					$('.list-nama').hide();
+					$('.main-name').text(Cookies.get('user', {
+						path    : '/dasbor/', 
+						domain  : 'r26ast.github.io'
+					}).toUpperCase());
+				} 
+			});
 		</script>
 	</div>
 	
