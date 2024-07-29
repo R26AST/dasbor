@@ -616,8 +616,20 @@
 $('document').ready(function() {
 	$('#loader').fadeOut();
 	$('#logout').click(function () {
+		var akses = Cookies.get('akses', {
+				path    : '/dasbor/', 
+				domain  : 'r26ast.github.io'
+			});
 		$('#loader').fadeIn();
-		setTimeout(function() {window.location.replace("https://r26ast.github.io/osn/osn")}, 500);
+		if(akses === '0') {
+			setTimeout(function() {window.location.replace("https://r26ast.github.io/dasbor/peserta")}, 500);
+		}
+		else if(akses === '1') {
+			setTimeout(function() {window.location.replace("https://r26ast.github.io/dasbor/guru")}, 500);
+		}
+		else if(akses === '2') {
+			setTimeout(function() {window.location.replace("https://r26ast.github.io/dasbor/admin")}, 500);
+		}
 		localStorage.clear();
 	});
 });
