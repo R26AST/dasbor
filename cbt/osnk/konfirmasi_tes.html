@@ -271,6 +271,14 @@
 	function mulaiTes(){
 			$('#loader').fadeIn();
 			setTimeout(function() {window.location.replace('cbt');}, 1000);
+         		var elem = document.documentElement;
+         		if (elem.requestFullscreen) {
+         			elem.requestFullscreen();
+         		} else if (elem.webkitRequestFullscreen) { 
+         			elem.webkitRequestFullscreen();
+         		} else if (elem.msRequestFullscreen) {
+         			elem.msRequestFullscreen();
+			}
 	}
 </script>
 
