@@ -20,6 +20,7 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-BB3NLM7RX6"></script>
 	<script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+	<script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js" type="application/javascript"></script>
 	<!--<script>
 	window.dataLayer = window.dataLayer || [];
 	function gtag(){dataLayer.push(arguments);}
@@ -674,7 +675,18 @@ $('document').ready(function() {
 	
 	
 	$('#btn-unduh').click(function() {
-		alert('Mohon maaf akses download belum tersedia');
+		//alert('Mohon maaf akses download belum tersedia');
+		
+		const element = document.querySelector('body');
+		const opt = {
+		  filename: 'hasil.pdf',
+		  margin: 2,
+		  //image: {type: 'jpeg', quality: 0.9},
+		  jsPDF: {format: 'A4', orientation: 'portrait'}
+		};
+		html2pdf().set(opt).from(element).save();
+		html2pdf(element, opt);
+		
 		/*$.ajax({ 
 			   type: "POST",
 			   dataType: "html",
